@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="miaosha@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="miaosha">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="CRPEB"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="notes"/>
+    <schema id="7" parent="1" name="o2o"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="seckill"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="tmall_ssm"/>
+    <schema id="12" parent="1" name="user"/>
+    <table id="13" parent="2" name="goods"/>
+    <table id="14" parent="2" name="miaosha_goods"/>
+    <table id="15" parent="2" name="miaosha_order"/>
+    <table id="16" parent="2" name="miaosha_user"/>
+    <table id="17" parent="2" name="order_info"/>
+    <table id="18" parent="2" name="user"/>
+    <column id="19" parent="13" name="id">
+      <Position>1</Position>
+      <Comment>商品ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="13" name="goods_name">
+      <Position>2</Position>
+      <Comment>商品名称</Comment>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="21" parent="13" name="goods_title">
+      <Position>3</Position>
+      <Comment>商品标题</Comment>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="22" parent="13" name="goods_img">
+      <Position>4</Position>
+      <Comment>商品的图片</Comment>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="23" parent="13" name="goods_detail">
+      <Position>5</Position>
+      <Comment>商品的详情介绍</Comment>
+      <DataType>longtext|0</DataType>
+    </column>
+    <column id="24" parent="13" name="goods_price">
+      <Position>6</Position>
+      <Comment>商品单价</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
+    </column>
+    <column id="25" parent="13" name="goods_stock">
+      <Position>7</Position>
+      <Comment>商品库存，-1表示没有限制</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="26" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="14" name="id">
+      <Position>1</Position>
+      <Comment>秒杀的商品表</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="28" parent="14" name="goods_id">
+      <Position>2</Position>
+      <Comment>商品Id</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="29" parent="14" name="miaosha_price">
+      <Position>3</Position>
+      <Comment>秒杀价</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="14" name="stock_count">
+      <Position>4</Position>
+      <Comment>库存数量</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="14" name="start_date">
+      <Position>5</Position>
+      <Comment>秒杀开始时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="32" parent="14" name="end_date">
+      <Position>6</Position>
+      <Comment>秒杀结束时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="33" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="15" name="user_id">
+      <Position>2</Position>
+      <Comment>用户ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="36" parent="15" name="order_id">
+      <Position>3</Position>
+      <Comment>订单ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="37" parent="15" name="goods_id">
+      <Position>4</Position>
+      <Comment>商品ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <key id="38" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="16" name="id">
+      <Position>1</Position>
+      <Comment>用户ID，手机号码</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="16" name="nickname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="16" name="password">
+      <Position>3</Position>
+      <Comment>MD5(MD5(pass明文+固定salt) + salt)</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="42" parent="16" name="salt">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="43" parent="16" name="head">
+      <Position>5</Position>
+      <Comment>头像，云存储的ID</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="44" parent="16" name="register_date">
+      <Position>6</Position>
+      <Comment>注册时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="45" parent="16" name="last_login_date">
+      <Position>7</Position>
+      <Comment>上蔟登录时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="46" parent="16" name="login_count">
+      <Position>8</Position>
+      <Comment>登录次数</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="47" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="17" name="user_id">
+      <Position>2</Position>
+      <Comment>用户ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="50" parent="17" name="goods_id">
+      <Position>3</Position>
+      <Comment>商品ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="51" parent="17" name="delivery_addr_id">
+      <Position>4</Position>
+      <Comment>收获地址ID</Comment>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="52" parent="17" name="goods_name">
+      <Position>5</Position>
+      <Comment>冗余过来的商品名称</Comment>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="53" parent="17" name="goods_count">
+      <Position>6</Position>
+      <Comment>商品数量</Comment>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="54" parent="17" name="goods_price">
+      <Position>7</Position>
+      <Comment>商品单价</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+      <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
+    </column>
+    <column id="55" parent="17" name="order_channel">
+      <Position>8</Position>
+      <Comment>1pc，2android，3ios</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="56" parent="17" name="status">
+      <Position>9</Position>
+      <Comment>订单状态，0新建未支付，1已支付，2已发货，3已收货，4已退款，5已完成</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="57" parent="17" name="create_date">
+      <Position>10</Position>
+      <Comment>订单的创建时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="58" parent="17" name="pay_date">
+      <Position>11</Position>
+      <Comment>支付时间</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="59" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="60" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>varchar(24)|0</DataType>
+    </column>
+    <key id="62" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
